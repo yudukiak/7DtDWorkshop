@@ -1,0 +1,9 @@
+<IncreaseInventory>
+  <set xpath="/windows/window[@name='windowBackpack']/@width">1008</set> <!-- 606 -->
+  <set xpath="/windows/window[@name='windowBackpack']/@height">349</set> <!-- 349 -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/@height">303</set> <!-- 303 -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite/@width">1008</set> <!-- 606 -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite/@height">336</set> <!-- 336 -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid/@rows">6</set> <!-- 5 -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid/@cols">15</set> <!-- 9 -->
+</IncreaseInventory>
