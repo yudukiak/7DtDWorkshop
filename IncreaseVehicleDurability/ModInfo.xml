@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <Name value="IncreaseVehicleDurability" />
+  <DisplayName value="IncreaseVehicleDurability" />
+  <Version value="1.21.2" />
+  <Description value="車両の耐久を増やします" />
+  <Author value="紅坂柚月" />
+  <Website value="https://twitter.com/yudukiak" />
+</xml>
