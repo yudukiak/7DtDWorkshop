@@ -1,0 +1,6 @@
+<IncreaseCraftingQueue>
+  <set xpath="/windows/window[@name='windowCraftingQueue']/@height"> 156 </set> <!-- 78 -->
+  <set xpath="/windows/window[@name='windowCraftingQueue']/rect/@pos"> 0,0 </set> <!-- 96,0 -->
+  <set xpath="/windows/window[@name='windowCraftingQueue']/rect/grid/@rows"> 2 </set> <!-- 1 -->
+  <set xpath="/windows/window[@name='windowCraftingQueue']/rect/grid/@cols"> 5 </set> <!-- 4 -->
+</IncreaseCraftingQueue>
