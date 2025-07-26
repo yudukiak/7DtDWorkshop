@@ -1,0 +1,5 @@
+<IncreaseInventory>
+  <!-- スケールを0.9714倍に調整 -->
+  <set xpath="/xui/ruleset[@name='default']/@scale"> 1.219 </set> <!-- 1.255 -->
+  <set xpath="/xui/ruleset[@name='default']/@stackpanel_scale"> 1.02 </set> <!--1.05 -->
+</IncreaseInventory>
