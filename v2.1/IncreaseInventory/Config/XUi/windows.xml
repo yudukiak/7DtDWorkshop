@@ -1,9 +1,26 @@
 <IncreaseInventory>
-  <set xpath="/windows/window[@name='windowBackpack']/@width">1008</set> <!-- 606 -->
+	<!-- BACKPACK -->
+	<!-- Window size -->
+  <set xpath="/windows/window[@name='windowBackpack']/@width">1212</set> <!-- 606 -->
   <set xpath="/windows/window[@name='windowBackpack']/@height">349</set> <!-- 349 -->
-  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/@height">303</set> <!-- 303 -->
-  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite/@width">1008</set> <!-- 606 -->
-  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite/@height">336</set> <!-- 336 -->
-  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid/@rows">6</set> <!-- 5 -->
-  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid/@cols">15</set> <!-- 9 -->
+
+  <!-- Header size -->
+  <!-- 空にするボタン？ -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnClearInventory']/@pos">145, -22</set> <!-- -45, -22 -->
+  <!-- ロックボタン -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnToggleLockMode']/@pos">200, -22</set> <!-- 0, -22 -->
+  <!-- ソートボタン -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnSort']/@pos">250, -22</set> <!-- 50, -22 -->
+  <!-- ストレージ（スマート）ボタン -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/rect/button[@name='btnMoveFillAndSmart']/@pos">300, -22</set> <!-- 100, -22 -->
+  <!-- ストレージ（すべて）ボタン -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/rect/button[@name='btnMoveAll']/@pos">350, -22</set> <!-- 150, -22 -->
+  <!-- 所持金の位置を `@width - 114` の値にする -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/label[@text='{currencyamount}']/@pos">1098,-8</set> <!-- 492,-8 -->
+  <!-- 所持金のアイコン位置を`@width - 29` の値にする -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/sprite[@name='costIcon']/@pos">1183,-10</set> <!-- 577,-10 -->
+  
+	<!-- Inventory slots -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid/@rows">7</set> <!-- 5 -->
+  <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid/@cols">18</set> <!-- 9 -->
 </IncreaseInventory>

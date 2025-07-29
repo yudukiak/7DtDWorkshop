@@ -1,6 +1,6 @@
 <IncreaseInventory>
-  <!-- 神モード中 -->
-  <set xpath="/buffs/buff[@name='god']/effect_group/passive_effect[@name='CarryCapacity']/@value"> 90 </set> <!-- 45 -->
-  <!-- ステロイド中 -->
-  <set xpath="/buffs/buff[@name='buffDrugSteroids']/effect_group/passive_effect[@name='CarryCapacity']/@value"> 90 </set> <!-- 45 -->
+  <!-- 神モード中 は BagSize と同じ値 -->
+  <set xpath="/buffs/buff[@name='god']/effect_group/passive_effect[@name='CarryCapacity']/@value"> 126 </set> <!-- 45 -->
+  <!-- ステロイド中 は BagSize と同じ値 -->
+  <set xpath="/buffs/buff[@name='buffDrugSteroids']/effect_group/passive_effect[@name='CarryCapacity']/@value"> 126 </set> <!-- 45 -->
 </IncreaseInventory>
