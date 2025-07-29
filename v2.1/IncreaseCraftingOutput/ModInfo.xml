@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <Name value="IncreaseCraftingOutput" />
+  <DisplayName value="IncreaseCraftingOutput" />
+  <Version value="2.1.0" />
+  <Description value="出力の数を増やします" />
+  <Author value="紅坂柚月" />
+  <Website value="https://twitter.com/yudukiak" />
+</xml>

@@ -1,0 +1,4 @@
+<IncreaseCraftingOutput>
+  <set xpath="/windows/window[@name='windowOutput']/rect[@name='content']/sprite/grid/@rows"> 5 </set> <!-- 2 -->
+  <set xpath="/windows/window[@name='windowOutput']/rect[@name='content']/sprite/grid/@cols"> 3 </set> <!-- 3 -->
+</IncreaseCraftingOutput>
