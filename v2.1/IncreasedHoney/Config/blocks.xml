@@ -6,6 +6,12 @@
     <drop event="Harvest" name="foodHoney" count="1" prob="0.01"/>
   </append>
   <!-- 切り株（野外/POI） 20% → 40% -->
-  <set xpath="/blocks/block[@name='treeStump']/drop[@name='foodHoney']/@prob">0.40</set>
-  <set xpath="/blocks/block[@name='treeStumpPOI']/drop[@name='foodHoney']/@prob">0.40</set>
+  <!--<set xpath="/blocks/block[@name='treeStump']/drop[@name='foodHoney']/@prob">0.40</set>-->
+  <append xpath="/blocks/block[@name='treeStump']">
+    <drop event="Harvest" name="foodHoney" count="1" prob="0.4"/>
+  </append>
+  <!--<set xpath="/blocks/block[@name='treeStumpPOI']/drop[@name='foodHoney']/@prob">0.40</set>-->
+  <append xpath="/blocks/block[@name='treeStumpPOI']">
+    <drop event="Harvest" name="foodHoney" count="1" prob="0.4"/>
+  </append>
 </configs>
