@@ -2,7 +2,7 @@
   <set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">15000</set> <!-- 1500 -->
   <set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">20000</set> <!-- 2000 -->
   <set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">40000</set> <!-- 4000 -->
-  <set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">80000</set> <!-- 8000 -->
+  <set xpath="/items/item[@name='vehicleTruck4x4Placeable']/effect_group/passive_effect[@name='DegradationMax']/@value">80000</set> <!-- 8000 -->
   <set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">35000</set> <!-- 3500 -->
 </IncreaseVehicleDurability>
   
