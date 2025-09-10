@@ -1,0 +1,18 @@
+<!--
+  loot_prob_template の確率
+  0.05 veryLow
+  0.20 low
+  0.50 med
+  0.63 medLow
+  0.75 high
+  1.00 guaranteed (未記入の場合も同様)
+-->
+<configs>
+  <!-- 鳥の巣には必ず1個のタマゴが存在する -->
+  <append xpath="lootcontainers/lootgroup[@name='groupBirdNest01']">
+    <item name="foodEgg" count="1" loot_prob_template="guaranteed" />
+  </append>
+  <!-- 鳥の巣には必ず1～5個のタマゴ存在する -->
+  <setattribute xpath="/lootcontainers/lootgroup[@name='groupBirdNest02']/item[@name='foodEgg']" name="count">1,5</setattribute>
+  <set xpath="/lootcontainers/lootgroup[@name='groupBirdNest02']/item[@name='foodEgg']/@loot_prob_template">guaranteed</set>
+</configs>
