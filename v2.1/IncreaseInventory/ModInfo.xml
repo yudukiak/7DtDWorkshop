@@ -2,7 +2,7 @@
 <xml>
   <Name value="IncreaseInventory" />
   <DisplayName value="IncreaseInventory" />
-  <Version value="2.1.0" />
+  <Version value="1.21.2" />
   <Description value="インベントリ（バックパック）を増やします" />
   <Author value="紅坂柚月" />
   <Website value="https://twitter.com/yudukiak" />
