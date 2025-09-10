@@ -2,7 +2,7 @@
 <xml>
   <Name value="IncreaseCraftingQueue" />
   <DisplayName value="IncreaseCraftingQueue" />
-  <Version value="1.21.2" />
+  <Version value="2.3.0" />
   <Description value="インベントリのキューを増やします" />
   <Author value="紅坂柚月" />
   <Website value="https://twitter.com/yudukiak" />
