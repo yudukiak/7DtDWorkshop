@@ -1,0 +1,11 @@
+<configs>
+  <!-- 荒れ地の財宝1巻 既読 5% → 10% -->
+  <set xpath="/blocks/block[@name='treeMaster']/drop[@name='foodHoney' and @tag='WasteTreasuresHoneyHarvest']/@prob">0.10</set>
+  <!-- 荒れ地の財宝1巻 未読 0% → 1% -->
+  <append xpath="/blocks/block[@name='treeMaster']">
+    <drop event="Harvest" name="foodHoney" count="1" prob="0.01"/>
+  </append>
+  <!-- 切り株（野外/POI） 20% → 40% -->
+  <set xpath="/blocks/block[@name='treeStump']/drop[@name='foodHoney']/@prob">0.40</set>
+  <set xpath="/blocks/block[@name='treeStumpPOI']/drop[@name='foodHoney']/@prob">0.40</set>
+</configs>
