@@ -1,0 +1,15 @@
+<configs>
+  <!-- 切り株 破壊時のblock_tree_stump_bees -->
+
+  <!-- ハチの出現率を80%から100%に変更 -->
+  <setattribute
+    xpath="/gameevents/action_sequence[@name='block_tree_stump_bees']
+           /action[@class='SpawnEntity']/requirement[@class='RandomRoll']
+           /property[@name='value']"
+    name="value">100</setattribute>
+  <!-- ハチミツの量を1個から2～6個に変更 -->
+  <setattribute
+    xpath="/gameevents/action_sequence[@name='block_tree_stump_bees']
+           /action[@class='AddItems']/property[@name='added_item_counts']"
+    name="value">2-6</setattribute>
+</configs>
