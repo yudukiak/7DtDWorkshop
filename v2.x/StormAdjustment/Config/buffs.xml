@@ -1,3 +1,15 @@
+<!-- 
+  <triggered_effect> バフを受けた瞬間、1度だけ処理される
+  <passive_effect> バフを受けている間、常に処理される
+
+  operation="" について
+  - set: 設定（valueが10なら10に設定）
+  - add: 加算（valueが-10なら10減らす）
+  - subtract: 減算（valueが10なら10減らす）
+  - multiply: 乗算（valueが10なら10倍にする）
+  - divide: 除算（valueが10なら0.1倍にする）
+
+-->
 <configs>
   <!-- 既存 AddHealth を一括削除 -->
   <remove
@@ -5,45 +17,45 @@
            //effect_group[requirement[@operation='LTE'] and requirement[@operation='EQ']]/triggered_effect[@action='AddHealth' and @health='@$StormDamage']" />
 
   <!-- 焼け森 Burnt -->
-  <!-- ダメージ: -11 => -6 ~ -1 -->
+  <!-- ダメージ: -11 -->
   <append xpath="//buff[@name='buffBurnt_Storm']//effect_group[requirement[@operation='LTE'] and requirement[@operation='EQ']]">
     <!-- 1) HPダメージの乱数を設定 -->
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-6,-1)" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-1,-1)" />
     <!-- 2) HPダメージの乱数をスタミナ用にコピー -->
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="set" value="@$StormDamage" />
     <!-- 3) スタミナ用の乱数を2倍に変更 -->
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="2" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="3" />
     <!-- 4) HPとスタミナに乱数を反映 -->
     <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="add" value="@.StormStamina" />
   </append>
 
   <!-- 砂漠 Desert -->
-  <!-- ダメージ: -12 => -7 ~ -2 -->
+  <!-- ダメージ: -12 -->
   <append xpath="//buff[@name='buffDesert_Storm']//effect_group[requirement[@operation='LTE'] and requirement[@operation='EQ']]">
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-7,-2)" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-2,-1)" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="set" value="@$StormDamage" />
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="2" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="3" />
     <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="add" value="@.StormStamina" />
   </append>
 
   <!-- 雪原 Snow -->
-  <!-- ダメージ: -13 => -8 ~ -3 -->
+  <!-- ダメージ: -13 -->
   <append xpath="//buff[@name='buffSnow_Storm']//effect_group[requirement[@operation='LTE'] and requirement[@operation='EQ']]">
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-8,-3)" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-3,-1)" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="set" value="@$StormDamage" />
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="2" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="3" />
     <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="add" value="@.StormStamina" />
   </append>
 
   <!-- 荒地 Wasteland -->
-  <!-- ダメージ: -14 => -9 ~ -4 -->
+  <!-- ダメージ: -14 -->
   <append xpath="//buff[@name='buffWasteland_Storm']//effect_group[requirement[@operation='LTE'] and requirement[@operation='EQ']]">
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-9,-4)" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamage" operation="set" value="randomInt(-4,-1)" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="set" value="@$StormDamage" />
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="2" />
+    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormStamina" operation="multiply" value="3" />
     <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage" />
     <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="add" value="@.StormStamina" />
   </append>
@@ -51,6 +63,10 @@
   <!-- 嵐 発生中のバフ -->
   <append xpath="//buff[@name='buffBurnt_Storm' or @name='buffDesert_Storm' or @name='buffSnow_Storm' or @name='buffWasteland_Storm']">
     <effect_group>
+      <!-- 被ダメージ量 +10% -->
+      <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+      <!-- スタミナ消費量 +10% -->
+      <passive_effect name="StaminaLoss" operation="perc_add" value=".1" />
       <!-- 経験値 +100% (2倍) -->
       <passive_effect name="PlayerExpGain" operation="perc_add" value="1" tags="Kill" />
       <!-- ゲームステージ +100% (2倍) -->
@@ -66,4 +82,5 @@
       <passive_effect name="LootQuantity" operation="perc_add" value="1" tags="dukes" />
     </effect_group>
   </append>
+
 </configs>
